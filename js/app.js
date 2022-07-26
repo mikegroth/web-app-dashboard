@@ -14,7 +14,7 @@ const myChart = new Chart(ctx, {
         datasets: [{
             data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500,
               2500],
-            backgroundColor: 'rgba(116, 119, 191, .3)',
+            backgroundColor: 'rgba(14, 88, 134, .3)',
             borderWidth: 1,
         }]
     },
@@ -48,7 +48,7 @@ const dailyChart = new Chart(ctx2, {
           label: '# of Hits',
           data: [75, 110, 175, 120, 225, 200, 100],
           backgroundColor: [
-            'rgba(54, 162, 235, 1)'
+            'rgba(14, 88, 134, 1)'
           ],
   }]
   },
@@ -76,14 +76,14 @@ const mobileChart = new Chart(ctx3, {
           label: 'hello',
           data: [12, 19, 21],
           backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
+              'rgba(14, 88, 134, 0.2)',
               'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)'
+              'rgba(14, 88, 134, 1)'
           ],
           borderColor: [
-              'rgba(255, 99, 132, 1)',
+            'rgba(14, 88, 134, 0.2)',
               'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)'
+              'rgba(14, 88, 134, 1)'
           ],
           borderWidth: 1
       }]
