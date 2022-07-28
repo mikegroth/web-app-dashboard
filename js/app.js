@@ -1,6 +1,7 @@
 
 console.log('hello');
 
+// Chart content
 
 const ctx = document.getElementById('traffic-chart').getContext('2d');
 
@@ -101,3 +102,35 @@ const mobileChart = new Chart(ctx3, {
     }
   }
 });
+
+
+// Web Interactive
+
+const alertContainer = document.getElementById("alert");
+
+alertContainer.addEventListener('click', e => {
+  const bannerClose = e.target;
+  console.log('clicking close btn');
+  if (bannerClose.classList.contains("alert-btn-close")) {
+    alertContainer.style.display = 'none';
+  }
+});
+
+const notifications = document.getElementById("bell-icon");
+
+const bellBox = document.getElementById("bell-notes");
+
+
+notifications.addEventListener('click', e => {
+  const bellNotes = e.target;
+  console.log('clicking on bell');
+  if (bellNotes.classList.contains("bell-notes")) {
+    bellBox.innerHTML = `<ul class="dropdown">
+    <li class="dropdown-item">You have 2 unread messages <p>X</p> </li>
+    <li class="dropdown-item">You have 3 new followers <p>X</p> </li>
+    <li class="dropdown-item">Your password expires in 4 days<p>X</p> </li>
+    </ul>`;
+  }
+});
+
+
