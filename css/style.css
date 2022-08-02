@@ -153,6 +153,7 @@ h3 {
 }
 
 
+
 .traffic-list {
   display: flex;
   flex-direction: row;
@@ -161,10 +162,22 @@ h3 {
   padding: 0px;
 }
 
-.traffic li {
-  background-color: lightgreen;
+
+.traffic-nav-link {
+  margin: 0 5px;
+  background-color: var(--color-primary);
+  color: #fff;
   padding: 10px;
   border-radius: 25px;
+}
+
+.chart-active {
+  margin: 0 5px;
+  background-color: rgb(72, 248, 151);
+  color: black;
+  padding: 10px;
+  border-radius: 25px;
+  transition: linear .2s;
 }
 
 svg path {
@@ -181,7 +194,7 @@ svg path {
   border-bottom: 1px solid gray;
 }
 
-#last-child, #last-child-recent {
+#member-4, #last-child-recent {
   border: none;
 }
 
@@ -273,6 +286,18 @@ svg path {
   background-color: rgb(241, 241, 241);
   border-radius: 5px;
   border: solid 1px gray;
+}
+
+.form-error {
+  background-color: rgb(255, 191, 180);
+  border: solid 2px red;
+  border-radius: 5px;
+}
+
+.form-sent {
+  background-color: rgb(180, 255, 190);
+  border: solid 2px green;
+  border-radius: 5px;
 }
 
 .btn-primary {
@@ -408,9 +433,7 @@ text-transform: uppercase;
     flex-direction: row;
     justify-content: space-between;
   }
-  .traffic-nav-link {
-    margin: 0 5px;
-  }
+  
   
   .daily-traffic {
     border-right: 1px solid gray;
@@ -445,9 +468,18 @@ text-transform: uppercase;
 
 /* Bell Icon Dropdown alert notifications menu */
 
+
 .dropdown-alert {
   display: block;
   position: relative;
+}
+
+.dropdown-box-hide {
+  display: none;
+}
+
+.dropdown-box {
+  display: flex;
 }
 
 .dropdown-alert ul {
@@ -455,7 +487,6 @@ text-transform: uppercase;
   left: -50px;
   top: -5px;
   list-style: none;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -467,13 +498,17 @@ text-transform: uppercase;
   align-items: center;
   padding: .5em;
   font-size: 12px;
-  width: 200px;
+  width: 210px;
   background-color: var(--color-secondary);
   border: 1px solid gray;
 }
 
 .dropdown-btn {
   margin-left: auto;
+  font-weight: bold;
+  color: #fff;
+  border-style: none;
+  background-color: var(--color-secondary);
 }
 
 .alert-badge {
@@ -483,7 +518,11 @@ text-transform: uppercase;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: turquoise;
+  background: rgb(72, 248, 151);
+}
+
+.alert-badge-hide {
+  display: none;
 }
 
 
