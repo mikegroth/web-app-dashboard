@@ -1,6 +1,4 @@
 
-console.log('hello');
-
 // Chart content
 
 const trafficWeekly = document.getElementById('traffic-chart-weekly').getContext('2d');
@@ -118,35 +116,35 @@ document.addEventListener('click', (e) => {
     }
     e.target.className = 'chart-active';
   }
-})
+});
 
 navMonthly.addEventListener('click', () => {
   trafficMonthlyChart.style = 'display: block;';
   trafficDailyChart.style = 'display: none;';
   trafficWeeklyChart.style = 'display: none;';
   trafficHourlyChart.style = 'display: none;';
-})
+});
 
 navDaily.addEventListener('click', () => {
   trafficMonthlyChart.style = 'display: none;';
   trafficDailyChart.style = 'display: block;';
   trafficWeeklyChart.style = 'display: none;';
   trafficHourlyChart.style = 'display: none;';
-})
+});
 
 navWeekly.addEventListener('click', () => {
   trafficMonthlyChart.style = 'display: none;';
   trafficDailyChart.style = 'display: none;';
   trafficWeeklyChart.style = 'display: block;';
   trafficHourlyChart.style = 'display: none;';
-})
+});
 
 navHourly.addEventListener('click', () => {
   trafficMonthlyChart.style = 'display: none;';
   trafficDailyChart.style = 'display: none;';
   trafficWeeklyChart.style = 'display: none;';
   trafficHourlyChart.style = 'display: block;';
-})
+});
 
 const ctx2 = document.getElementById('daily-traffic-chart').getContext('2d');
 
@@ -258,17 +256,17 @@ sendMessage.addEventListener('click', () => {
 
 userSelect.addEventListener('keyup', () => {
   if (userSelect.value !== "") {
-    userSelect.className = 'form-search'
+    userSelect.className = 'form-search';
     userSelect.setAttribute('placeholder', `Search for User`);
   }
-})
+});
 
 message.addEventListener('keyup', () => {
   if (message.value !== "") {
-    message.className = 'form-search'
+    message.className = 'form-search';
     message.setAttribute('placeholder', `Message for User`);
   }
-})
+});
 
 
 //Bell Icon Interactions /////////////////////////////////////////////////////
@@ -287,7 +285,7 @@ bellContainer.addEventListener('click', () => {
   } else {
     bellClose.className = 'dropdown-box-hide';
   }
-})
+});
 
 // Closing Bell Notification messages
 
@@ -314,7 +312,7 @@ function notifyAlert() {
 
 let userNames = ['victoria chambers', 'dale byrd', 'dawn wood', 'dan oliver', 'mikey made-up', 'randy random', 'ian input'];
 
-const nameSearch = document.getElementById('search-results')
+const nameSearch = document.getElementById('search-results');
 
 //Searches from Users within the usernames array and displays as a dropdown menu
 
@@ -345,7 +343,7 @@ nameSearch.addEventListener('click', (e) => {
     userSelect.value = e.target.innerHTML;
     nameSearch.style.display = 'none';
   }
-})
+});
 
 //clears dropdown user search when clicking away
 
@@ -354,7 +352,7 @@ document.addEventListener('click', (e) => {
   if (listName === false) {
     nameSearch.style.display = 'none';
   }
-})
+});
 
 // Local Storage Save and Cancel features
 
@@ -370,22 +368,22 @@ savedTimezone();
 savedEmail();
 savedPublic();
 
-//save/cancel click events & setting functions
+//save & cancel click events w/ setting functions
 
 saveBtn.addEventListener('click', () => {
-  console.log('clicking save')
+  console.log('clicking save');
   let timezone = document.getElementById('timezone').value;
   localStorage.setItem('timezone-choice', timezone);
   emailSetting();
   publicSetting();
-})
+});
 
 cancelBtn.addEventListener('click', () => {
   localStorage.clear();
   timeSave.value = 'Select Timezone';
   emailOnOff.checked = false;
   publicOnOff.checked = false;
-})
+});
 
 function savedTimezone() {
   let timezoneSave = localStorage.getItem('timezone-choice');
