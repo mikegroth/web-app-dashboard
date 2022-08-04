@@ -58,7 +58,7 @@ svg {
   width: 2em;
 }
 
-svg:hover {
+#bell-svg:hover {
   animation-name: ring-ring;
   animation-duration: .8s;
 }
@@ -162,7 +162,7 @@ h3 {
 }
 
 .main-item {
-  margin: 1em 1em;
+  margin: 1em;
   font-size: .9em;
 }
 
@@ -245,7 +245,7 @@ svg path {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 1em;
+  margin: .5em;
   padding: .5em;
   border: solid 1px gray;
   border-radius: 10px;
@@ -278,7 +278,7 @@ svg path {
 }
 
 .social-count {
-  font-size: 3em;
+  font-size: 2.3em;
   align-self: flex-start;
 }
 
@@ -380,6 +380,7 @@ text-transform: uppercase;
 /* media query styles for 768px min */
 
 @media (min-width: 768px) {
+
   .grid-container {
     grid-template-columns: 55px 1fr;
     grid-template-areas:
@@ -398,7 +399,7 @@ text-transform: uppercase;
   }
 
   .social-item {
-    flex-basis: 33%
+    flex-basis: 30%
   }
 
   header {
@@ -419,11 +420,11 @@ text-transform: uppercase;
   }
 
   .chart-container {
-    width: 90vw;
+    width: 83vw;
   }
 
   .chart-container-half {
-    width: 45vw;
+    width: 40vw;
   }
 
   .traffic, .social-stats, .new-members, .message-user, .settings-time, .recent-activity, .dash, .alert {
