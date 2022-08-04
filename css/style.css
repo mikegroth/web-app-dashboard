@@ -58,6 +58,29 @@ svg {
   width: 2em;
 }
 
+svg:hover {
+  animation-name: ring-ring;
+  animation-duration: .8s;
+}
+
+@keyframes ring-ring {
+  15% {
+    transform: rotate(20deg);
+  }
+  30% {
+    transform: rotate(-20deg);
+  }
+  45% {
+    transform: rotate(20deg);
+  }
+  60% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+}
+
 nav img {
   height: 2em;
   width: 2em;
@@ -276,6 +299,8 @@ svg path {
   margin: 1em 0;
 }
 
+
+
 #message-input {
   width: 100%;
   height: 8em;
@@ -328,6 +353,10 @@ text-transform: uppercase;
   text-transform: uppercase;
 }
 
+.save-btn:hover, .cancel-btn:hover, #send-btn:hover {
+  opacity: .8;
+}
+
 .save-btn {
   background-color: var(--color-primary);
 }
@@ -348,6 +377,7 @@ text-transform: uppercase;
 }
 
 /* Media Queries */
+/* media query styles for 768px min */
 
 @media (min-width: 768px) {
   .grid-container {
@@ -440,6 +470,8 @@ text-transform: uppercase;
   }
 }
 
+/* media query styles for 1024px min */
+
 @media (min-width: 1024px) {
   .traffic, .social-stats, .dash, .alert {
     grid-column: 1 / span 2;
@@ -463,8 +495,6 @@ text-transform: uppercase;
   }
 
 }
-
-/* Possible Dropdown menu */ 
 
 /* Bell Icon Dropdown alert notifications menu */
 
@@ -524,6 +554,45 @@ text-transform: uppercase;
 .alert-badge-hide {
   display: none;
 }
+
+/* Autocomplete searchbar styles */
+
+.form-position {
+  position: relative;
+}
+
+.search-result {
+  position: absolute;
+  top: 40px;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  font-size: 16px;
+  width: 100%;
+  background-color: #fff;
+  list-style-type: none;
+}
+
+#search-results {
+  display: none;
+  align-items: flex-start;
+  border: 1px solid gray;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+#search-results li {
+  width: 100%;
+  margin: auto;
+  padding: .25em;
+}  
+
+#search-results li:hover {
+  background-color: lightgray;
+  border-left: solid 3px #0e5886;
+  border-right: solid 3px #0e5886;
+
+}
+
 
 
 

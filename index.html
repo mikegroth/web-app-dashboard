@@ -68,7 +68,7 @@
                 <div class="gray-tab"></div>
             </section>
             <section class="alert main-item" id="alert">
-                <p class="alert-message"><strong>Alert:</strong> You have <strong>3</strong> unread messages</p>
+                <p class="alert-message"><strong>Alert:</strong> You have <strong>3</strong> unread notifications</p>
                 <button type="button" class="alert-btn-close">X</button>
             </section>
             <section class="traffic" id="traffic">
@@ -165,7 +165,7 @@
                             <p>Victoria Chambers</p>
                             <a class="email-style" href="mailto:victoria.chambers80@example.com">victoria.chambers80@example.com</a>
                         </div>
-                        <span class="new-member-child">07/14/2022</span>
+                        <span class="new-member-child">08/02/2022</span>
                     </div>
 
                     <div class="new-member-box" id="member-2">
@@ -174,7 +174,7 @@
                             <p>Dale Byrd</p>
                             <a class="email-style" href="mailto:dale.byrd@example.com">dale.byrd@example.com</a>
                         </div>
-                        <span class="new-member-child">07/14/2022</span>
+                        <span class="new-member-child">08/02/2022</span>
                     </div>
 
                     <div class="new-member-box" id="member-3">
@@ -183,7 +183,7 @@
                             <p>Dawn Wood</p>
                             <a class="email-style" href="mailto:dawn.wood16@example.com">dawn.wood16@example.com</a>
                         </div>
-                        <span class="new-member-child">07/14/2022</span>
+                        <span class="new-member-child">08/02/2022</span>
                     </div>
 
                     <div class="new-member-box" id="member-4">
@@ -192,7 +192,7 @@
                             <p>Dan Oliver</p>
                             <a class="email-style" href="mailto:dan.oliver82@example.com">dan.oliver82@example.com</a>
                         </div>
-                        <span class="new-member-child">07/14/2022</span>
+                        <span class="new-member-child">08/02/2022</span>
                     </div>
                 </div>    
             </section>
@@ -241,8 +241,9 @@
             <section class="message-user">
                 <div class="main-item">
                     <h3 class="section-headline">Message User</h3>
-                    <form>
-                    <input type="search" id="search-input" placeholder="Search for User" class="form-search">
+                    <form class="form-position">
+                    <input type="search" id="search-input" placeholder="Search for User" class="form-search" autocomplete="off">
+                    <ul class="search-result" id="search-results"></ul>
                     <textarea id="message-input" placeholder="Message for User" class="form-text"></textarea>
                     <button type="button" id="send-btn" class="btn-primary">Send</button>
                     </form>
@@ -256,7 +257,7 @@
                         <div class="setting-toggle-box">
                             <p>Send Email Notifications</p>
                             <label class="switch-light switch-candy" onclick="">
-                                <input type="checkbox">
+                                <input type="checkbox" id="email-on-off">
                                 <span>
                                 <span>On</span>
                                 <span>Off</span>
@@ -268,7 +269,7 @@
                         <div class="setting-toggle-box">
                             <p>Set Profile to Public</p>
                             <label class="switch-light switch-candy" onclick="">
-                                <input type="checkbox">
+                                <input type="checkbox" id="public-on-off">
                                 <span class="switch-container">
                                 <span>On</span>
                                 <span>Off</span>
@@ -281,17 +282,17 @@
                 <div class="main-item">
                     <form>
                         <select name="timezone" id="timezone" placeholder="Select Timezone" class="time-dropdown">
-                            <option value="placeholder">Select Timezone</option>
-                            <option value="Pacific">PDT - Pacific</option>
-                            <option value="Mountain ">MDT - Mountain</option>
-                            <option value="Central">CDT - Central</option>
-                            <option value="Eastern">EDT - Eastern</option>
+                            <option class="timezone-option">Select Timezone</option>
+                            <option class="timezone-option">PDT - Pacific</option>
+                            <option class="timezone-option">MDT - Mountain</option>
+                            <option class="timezone-option">CDT - Central</option>
+                            <option class="timezone-option">EDT - Eastern</option>
                         </select>
                     </form>
 
                     <div class="setting-btns">   
-                        <button class="save-btn">Save</button>
-                        <button class="cancel-btn">Cancel</button>
+                        <button type="button" id="save-btn" class="save-btn">Save</button>
+                        <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
                     </div>    
                 </div>    
             </section>

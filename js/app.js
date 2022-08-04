@@ -84,7 +84,7 @@ let trafficHourlyData = {
   }]
 };
 
-//Putting Together a Chart Display
+//Putting Together a Chart Display /////////////////////////////////////////
 
 let trafficChartWeekly = new Chart(trafficWeekly, {
   type: 'line',
@@ -309,6 +309,127 @@ function notifyAlert() {
     notifyIcon.className = 'alert-badge-hide';
   }
 }
+
+/// Autocomplete functionality 
+
+let userNames = ['victoria chambers', 'dale byrd', 'dawn wood', 'dan oliver', 'mikey made-up', 'randy random', 'ian input'];
+
+const nameSearch = document.getElementById('search-results')
+
+//Searches from Users within the usernames array and displays as a dropdown menu
+
+function searchUser() {
+
+  let search = userSelect.value.toLowerCase();
+  let output = document.getElementById('search-results');
+  let allNames = '';
+
+  for (let i=0; i < userNames.length; i++) {
+    if (userSelect.value === '') {
+      nameSearch.style.display = 'none';
+    } 
+    else if (search !== '' && userNames[i].includes(`${search}`)) {
+      allNames += `<li class='list-name'>${userNames[i]}</li> `;
+      nameSearch.style.display = 'flex';
+    }
+  } output.innerHTML = allNames;
+}
+
+userSelect.addEventListener('keyup', searchUser);
+
+//adds username to 'Search for User' when clicked in drop down
+
+nameSearch.addEventListener('click', (e) => {
+  let listName = e.target.classList.contains('list-name');
+  if (listName) {
+    userSelect.value = e.target.innerHTML;
+    nameSearch.style.display = 'none';
+  }
+})
+
+//clears dropdown user search when clicking away
+
+document.addEventListener('click', (e) => {
+  let listName = e.target.classList.contains('list-name');
+  if (listName === false) {
+    nameSearch.style.display = 'none';
+  }
+})
+
+// Local Storage Save and Cancel features
+
+const saveBtn = document.getElementById('save-btn');
+const cancelBtn = document.getElementById('cancel-btn');
+const timeSave = document.getElementById('timezone');
+const emailOnOff = document.getElementById('email-on-off');
+const publicOnOff = document.getElementById('public-on-off');
+
+//functions below save changes if the local page is reloaded after save button is clicked
+
+savedTimezone();
+savedEmail();
+savedPublic();
+
+//save/cancel click events & setting functions
+
+saveBtn.addEventListener('click', () => {
+  console.log('clicking save')
+  let timezone = document.getElementById('timezone').value;
+  localStorage.setItem('timezone-choice', timezone);
+  emailSetting();
+  publicSetting();
+})
+
+cancelBtn.addEventListener('click', () => {
+  localStorage.clear();
+  timeSave.value = 'Select Timezone';
+  emailOnOff.checked = false;
+  publicOnOff.checked = false;
+})
+
+function savedTimezone() {
+  let timezoneSave = localStorage.getItem('timezone-choice');
+  if (timezoneSave !== null) {
+    timeSave.value = timezoneSave;
+  }
+}
+
+function savedEmail() {
+  let emailStatus = localStorage.getItem('email-setting');
+  if (emailStatus === 'checked') {
+    emailOnOff.checked = true;
+  } else {
+    emailOnOff.checked = false;
+  }
+}
+
+function emailSetting() {
+  if (emailOnOff.checked) {
+    localStorage.setItem('email-setting', 'checked');
+  } else {
+    localStorage.setItem('email-setting', 'not-checked');
+  }
+}
+
+function savedPublic() {
+  let publicStatus = localStorage.getItem('public-setting');
+  if (publicStatus === 'checked') {
+    publicOnOff.checked = true;
+  } else {
+    publicOnOff.checked = false;
+  }
+} 
+
+function publicSetting() {
+  if (publicOnOff.checked) {
+    localStorage.setItem('public-setting', 'checked');
+  } else {
+    localStorage.setItem('public-setting', 'not-checked');
+  }
+}
+
+
+
 
 
 
